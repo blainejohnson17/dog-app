@@ -199,9 +199,9 @@ def load_dog_names():
       'Xoloitzcuintli',
       'Yorkshire_terrier']
 
-if __name__ == "__main__":
-    load_models()
-    load_dog_names()
-    app.run(host='0.0.0.0', debug=False, port=os.environ.get('PORT', 80))
+# if __name__ == "__main__":
+load_models()
+load_dog_names()
+# app.run(host='0.0.0.0', debug=False, port=os.environ.get('PORT', 80))
     # app.run(host='0.0.0.0')
     # app.run()
