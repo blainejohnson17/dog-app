@@ -2,10 +2,10 @@ import time
 from flask import Flask
 from flask import send_from_directory
 from flask import request
-import keras
-from keras.preprocessing import image
-from keras.applications.resnet50 import ResNet50, preprocess_input
-from keras.preprocessing.image import img_to_array
+import tensorflow
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.applications.resnet50 import ResNet50, preprocess_input
+from tensorflow.keras.preprocessing.image import img_to_array
 from PIL import Image
 import numpy as np
 import io
@@ -60,7 +60,7 @@ def load_models():
     global base_model
     base_model = ResNet50(weights="imagenet", include_top=False)
     global extension_model
-    extension_model = keras.models.load_model("Resnet50_v2.1.h5")
+    extension_model = tensorflow.keras.models.load_model("Resnet50_v2.1.h5")
 
 def load_dog_names():
     global dog_names
@@ -202,6 +202,6 @@ def load_dog_names():
 if __name__ == "__main__":
     load_models()
     load_dog_names()
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', debug=False, port=os.environ.get('PORT', 80))
+    # app.run(host='0.0.0.0')
     # app.run()
-    # app.run(host='0.0.0.0', debug=False, port=os.environ.get('PORT', 80))
