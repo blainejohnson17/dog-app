@@ -70,9 +70,13 @@ const ImageUploader = () => {
             </div>
           </div>
           {/* Uploaded image area*/}
-          {!breed && isLoading && <div className="spinner-border text-light" role="status">
-            <span className="sr-only">Loading...</span>
-          </div>}
+          {!breed && isLoading &&
+            <div className="text-center">
+              <div className="spinner-border text-light" role="status">
+                <span className="sr-only">Loading...</span>
+               </div>
+            </div>
+          }
           {breed && <h2 className="text-white text-center">{breed}</h2>}
           {imgSrc && <div className="image-area mt-4"><img id="imageResult" src={imgSrc} alt className="img-fluid rounded shadow-sm mx-auto d-block" /></div>}
         </div>
