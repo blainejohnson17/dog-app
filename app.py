@@ -35,7 +35,6 @@ def serve():
     return send_from_directory(app.static_folder, 'index.html')
 
 def path_to_tensor(img):
-
     img = Image.open(io.BytesIO(img))
     if img.mode != "RGB":
       img = img.convert("RGB")
