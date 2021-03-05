@@ -1,0 +1,111 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "plugins": ["react", "jsx-a11y"],
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "globals": {
+    "Promise": "readonly",
+    "require": "readonly",
+    "jest": "readonly",
+    "it": "readonly",
+    "expect": "readonly",
+    "describe": "readonly",
+    "afterEach": "readonly",
+    "beforeEach": "readonly",
+    "beforeAll": "readonly",
+    "afterAll": "readonly",
+    "ENVIRONMENT": "readonly",
+    "SERVICE_BASE_URL": "readonly",
+    "IS_DEVELOPMENT_MODE": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 10,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "legacyDecorators": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "array-bracket-spacing": ["warn", "always", {
+      "objectsInArrays": false
+    }],
+    "comma-dangle": [ "warn", "only-multiline" ],
+    "comma-spacing": "warn",
+    "eol-last": "warn",
+    "indent": ["warn", 2, {
+      "SwitchCase": 1
+    }],
+    "jsx-quotes": ["warn", "prefer-double"],
+    "newline-before-return": "warn",
+    "newline-after-var": "warn",
+    "no-console": "warn",
+    "no-multiple-empty-lines": ["warn", {
+      "max": 1,
+      "maxEOF": 0
+    }],
+    "no-trailing-spaces": "warn",
+    "no-unused-expressions": "error",
+    "no-unused-vars": "warn",
+    "no-warning-comments": "warn",
+    "object-curly-newline": ["warn", {
+      "ObjectExpression": {
+        "consistent": true,
+        "minProperties": 2
+      },
+      "ObjectPattern": {
+        "multiline": true
+      },
+      "ImportDeclaration": {
+        "multiline": true,
+        "minProperties": 5
+      },
+      "ExportDeclaration": {
+        "multiline": true
+      }
+    }],
+    "object-curly-spacing": ["warn", "always", {
+      "arraysInObjects": true,
+      "objectsInObjects": true
+    }],
+    "object-property-newline": "warn",
+    "quotes": ["warn", "single"],
+    "quote-props": ["warn", "as-needed"],
+    "react/jsx-closing-bracket-location": "warn",
+    "react/jsx-curly-spacing": ["warn", {
+      "when": "never",
+      "attributes": {
+        "allowMultiline": false
+      },
+      "children": true
+    }],
+    "react/jsx-first-prop-new-line": ["warn", "multiline"],
+    "react/jsx-max-props-per-line": ["warn", {
+      "maximum": 1,
+      "when": "multiline"
+    }],
+    "react/jsx-tag-spacing": ["warn", {
+      "afterOpening": "never",
+      "beforeSelfClosing": "always"
+    }],
+    "react/prop-types": "error",
+    "semi-style": ["warn", "last"],
+    "semi": "warn",
+    "key-spacing": ["warn", { 
+      "beforeColon": false, 
+      "afterColon": true 
+    }]
+  }
+}

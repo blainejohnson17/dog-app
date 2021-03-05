@@ -1,0 +1,15 @@
+# More on EditorConfig: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# For all [JS] files, process as following:
+[*.{js}]
+charset = utf-8
+
+# For every file, process as following:
+[*]
+end_of_line = lf
+insert_final_newline = true
+indent_size = 2
+indent_style = space

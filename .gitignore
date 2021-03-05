@@ -1,0 +1,7 @@
+__pycache__/
+node_modules/
+dist/
+coverage/
+venv/
+.vscode/
+.DS_Store
