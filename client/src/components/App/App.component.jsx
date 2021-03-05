@@ -16,7 +16,7 @@ const ImageUploader = () => {
     if(imgFile) {
       const data = new FormData() 
       data.append('file', imgFile)
-      axios.post("http://127.0.0.1:5000/api/predictions", data)
+      axios.post("https://dog-breed-predict.herokuapp.com/api/predictions", data)
         .then(function (response) {
           setBreed(response.data.name)
         })
