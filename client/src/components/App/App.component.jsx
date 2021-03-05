@@ -11,15 +11,24 @@ const ImageUploader = () => {
   const [imgSrc, setImgSrc] = useState()
   const [imgFile, setImgFile] = useState()
   const [breed, setBreed] = useState()
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     if(imgFile) {
+      setIsLoading(true)
       const data = new FormData() 
       data.append('file', imgFile)
       axios.post("https://dog-breed-predict.herokuapp.com/api/predictions", data)
         .then(function (response) {
           setBreed(response.data.name)
         })
+        .catch(function (error) {
+          console.log(error);
+        })
+        .then(function () {
+          // always executed
+          setIsLoading(false)
+        });
     }
   }, [imgFile])
 
@@ -27,6 +36,7 @@ const ImageUploader = () => {
     setImgSrc()
     setImgFile()
     setBreed()
+    setIsLoading(false)
   }
 
   const handleChange = input => {
@@ -60,6 +70,9 @@ const ImageUploader = () => {
             </div>
           </div>
           {/* Uploaded image area*/}
+          {!breed && isLoading && <div className="spinner-border text-light" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>}
           {breed && <h2 className="text-white text-center">{breed}</h2>}
           {imgSrc && <div className="image-area mt-4"><img id="imageResult" src={imgSrc} alt className="img-fluid rounded shadow-sm mx-auto d-block" /></div>}
         </div>
